@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjectSaloon.Models.Saloon>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<img src="~/kess.jpg" height="550" width="1100" />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SaloonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaloonAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact_Number)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaloonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaloonAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact_Number)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SaloonID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SaloonID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SaloonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
