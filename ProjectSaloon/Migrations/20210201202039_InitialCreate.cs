@@ -103,7 +103,7 @@ namespace ProjectSaloon.Migrations
                 name: "IX_Product_SaloonID",
                 table: "Product",
                 column: "SaloonID");
-            var sqlFile = Path.Combine(".\\DatabaseScript", @"script.sql");
+            var sqlFile = Path.Combine(".\\DatabaseScript", @"data.sql");
             migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
